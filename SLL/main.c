@@ -10,6 +10,8 @@ int main(void) {
   insert_first(&head, 1);
   print_nodes(head);
   find_node(12, head);
+  free(head);
+  print_nodes(head);
   }
 
 

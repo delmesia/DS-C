@@ -42,14 +42,16 @@ int find_node(int val, struct Node *head){
   free(temp);
 }
 void print_nodes(struct Node *head){
-  if(head == NULL){
-    printf("Head is NULL");
-  }
-  while(head != NULL){
+  if(head->next == NULL){
+    printf("Head is NULL\n");
+  } else {
+    while(head != NULL){
     printf("%d --> ",head->data);
     head = head->next;
-  }
+    }
   puts("");
+  }
+  
 }
 void free_nodes(struct Node *head){
   struct Node *temp;
