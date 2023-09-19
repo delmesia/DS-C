@@ -21,9 +21,26 @@ void insert_last(struct Node **head, int val){
     }
   lastNode->next = new_node;
   }
-  
 }
-
+int find_node(int val, struct Node *head){
+  struct Node *temp = head;
+  int pos = 1;
+  if(temp == NULL) {
+    puts("There are no nodes yet");
+  } else {
+    while(temp->data != val){
+      if(temp->next == NULL){
+      printf("%d doesn't exist\n", val);
+      return 0;
+      }
+    temp = temp->next;
+    pos++;  
+    }
+  printf("%d is at node %d\n", val, pos);
+  }
+  return pos;
+  free(temp);
+}
 void print_nodes(struct Node *head){
   if(head == NULL){
     printf("Head is NULL");
@@ -34,7 +51,6 @@ void print_nodes(struct Node *head){
   }
   puts("");
 }
-
 void free_nodes(struct Node *head){
   struct Node *temp;
   while (head != NULL){

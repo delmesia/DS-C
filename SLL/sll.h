@@ -12,5 +12,6 @@ void insert_first(struct Node **head, int data);
 void print_nodes(struct Node *head);
 void free_nodes(struct Node *head);
 void insert_last(struct Node **head, int val);
+int find_node(int val, struct Node *head);
 void deinit();
 /////////////////////////
