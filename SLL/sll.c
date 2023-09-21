@@ -22,6 +22,18 @@ void insert_last(struct Node **head, int val){
   lastNode->next = new_node;
   }
 }
+//TODO: PROTOTYPE -- NOT YET DONE
+void insert_at_pos(struct Node **head, int pos, int val){
+  struct Node *new_node = malloc(sizeof(struct Node));
+  new_node->data = val;
+  struct Node *temp = *head;
+  for(int i = 1; i < pos; i++){
+    temp = temp->next;
+  }
+  new_node->next = temp->next;
+  temp->next = new_node;
+}
+
 int find_node(int val, struct Node *head){
   struct Node *temp = head;
   int pos = 1;
@@ -42,7 +54,7 @@ int find_node(int val, struct Node *head){
   free(temp);
 }
 void print_nodes(struct Node *head){
-  if(head->next == NULL){
+  if(head == NULL){
     printf("Head is NULL\n");
   } else {
     while(head != NULL){
@@ -51,7 +63,6 @@ void print_nodes(struct Node *head){
     }
   puts("");
   }
-  
 }
 void free_nodes(struct Node *head){
   struct Node *temp;
