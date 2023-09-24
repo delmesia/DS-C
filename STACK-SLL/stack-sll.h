@@ -6,4 +6,5 @@ struct ST {
 struct ST *head;
 
 void push(struct ST **head, int val);
+void pop();
 void printst(struct ST *head);

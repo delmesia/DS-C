@@ -8,9 +8,17 @@ void push(struct ST **head, int val){
   new->next = *head;
   *head = new;
 }
+void pop(){
+  struct ST *new = head;
+  printf("Popped: %d\n", head->data);
+  head = head->next;
+  free(new);
+}
+
 void printst(struct ST *head){
-  while(head != NULL){
-    printf("-- %d\n", head->data);
-    head = head->next;
+  struct ST *temp = head;
+  while(temp != NULL){
+    printf("-- %d\n", temp->data);
+    temp = temp->next;
   }
 }
